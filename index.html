@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Payment Info</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* HEADER STYLES */
+    header {
+      background-color: #1d1d1d;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo span {
+      color: yellow;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    #close-menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #1d1d1d;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      #close-menu {
+        display: block;
+        font-size: 18px;
+        color: red;
+      }
+    }
+
+    /* MAIN CARD STYLES */
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      max-width: 450px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #4CAF50;
+    }
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    p.title {
+      margin-bottom: 20px;
+      color: #666;
+      font-size: 16px;
+    }
+
+    .bank-details {
+      text-align: left;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .bank-details p {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .qr-code {
+      width: 180px;
+      margin: 0 auto 20px;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+
+    @media(max-width: 500px) {
+      .card {
+        padding: 20px;
+      }
+
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .bank-details p {
+        font-size: 14px;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1d1d1d;
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: yellow;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">NEXSHA<span>⚡</span></div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="/home.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#">Education</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Purchase</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" id="close-menu">✖</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Card Section -->
+  <div class="main">
+    <div class="card">
+      <img src="/files/photo!!.jpeg" alt="Admin Photo" class="profile-img" />
+      <h2>Goutam Prajapat</h2>
+      <p class="title">Full Stack Developer</p>
+
+      <div class="bank-details">
+        <p><strong>Bank Name:</strong> SBI</p>
+        <p><strong>Account Holder:</strong> Goutam Prajapat</p>
+        <p><strong>Account Number:</strong> 123456789012</p>
+        <p><strong>IFSC Code:</strong> SBIN0000001</p>
+      </div>
+
+      <img src="/files/qr bank.jpeg" alt="QR Code" class="qr-code" />
+
+      <a class="whatsapp-btn" href="https://wa.me/916378157779" target="_blank">
+        Contact on WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <a href="https://codemastergoutam.com" target="_blank">Thanks for visiting and happy coding!</a><br> © Copyright 2025. All rights reserved.
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    toggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      navMenu.classList.remove('show');
+    });
+  </script>
+
+</body>
+</html>
